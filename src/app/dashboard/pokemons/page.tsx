@@ -1,5 +1,10 @@
 import { PokemonGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
 
+export const metadata = {
+    title: '151 Pokemons',
+    description: 'Pero hay muchos más'
+};
+
 const getPokemons = async(limit = 151, offset = 0): Promise<SimplePokemon[]> => {
     const data: PokemonsResponse = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
         .then(res => res.json());
@@ -7,7 +12,7 @@ const getPokemons = async(limit = 151, offset = 0): Promise<SimplePokemon[]> => 
     const pokemons = data.results.map(pokemon => ({
         id: pokemon.url.split('/').at(-2)!,
         name: pokemon.name,
-    }))
+    }));
 
     // throw new Error('Upps!');
 
