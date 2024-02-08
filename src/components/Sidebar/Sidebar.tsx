@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { IoBrowsersOutline, IoCalculator, IoFootball, IoLogoReact } from 'react-icons/io5';
-import { SidebarMenuItem } from './SidebarMenuItem';
+import { IoBrowsersOutline, IoCalculator, IoFootball, IoLogoReact, IoHeartOutline } from 'react-icons/io5';
+import { SidebarMenuItem } from '../Sidebar/SidebarMenuItem';
 
 const menuItems = [
     {
@@ -20,6 +20,12 @@ const menuItems = [
         icon: <IoFootball size={40} />,
         title: 'Pokemons',
         subTitle: 'Generación estática'
+    },
+    {
+        path: '/dashboard/favorites',
+        icon: <IoHeartOutline size={40} />,
+        title: 'Favoritos',
+        subTitle: 'Global State'
     }
 ]
 
@@ -44,7 +50,7 @@ export const Sidebar = () => {
                     <span>
                         <Image
                             className="rounded-full w-8 h-8"
-                            src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=128&q=80"
+                            src="https://images.unsplash.com/photo-1707305311503-b94312242a11?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt=""
                             width={50}
                             height={50}
